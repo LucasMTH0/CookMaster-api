@@ -23,7 +23,7 @@ export async function listRecipes(request, response){
 export async function getRecipe(request, response){
     try {
         const {id} = request.params
-        const foundRecipe = await RECIPE().listFindById(id)
+        const foundRecipe = await RECIPE.findById(id)
         if(foundRecipe){
             response.status(200).json(foundRecipe)
         } else {
@@ -35,5 +35,5 @@ export async function getRecipe(request, response){
 }
 
 export async function updateRecipe(request, response){
-
+    
 }
