@@ -12,6 +12,8 @@ app.use(cors());
 
 app.use('/user', userRoutes)
 app.use('/recipe', recipeRoutes)
+
+
 app.listen('3009', () => {
     console.log("Open in http://localhost:3009")
 })

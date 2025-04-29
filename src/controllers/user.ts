@@ -7,7 +7,6 @@ export async function register(request: Request, response: Response){
     try {
         const user = request.body
         const encryptPassword = await generateEncryptPassword(user.password)
-        console.log("password: ", encryptPassword)
         const newUser = new USER({name: user.name, email: user.email, password: encryptPassword})
         await newUser.save()
         response.status(200).json({message: "Cadastro realizado com sucesso !"});
